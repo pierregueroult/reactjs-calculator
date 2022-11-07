@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden !important;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+
+  > div {
+    position: absolute !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    background-color: #1b3059 !important;
+  }
+}
+
+.image {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1b3059 !important;
+  object-fit: cover;
+}
+
+.placeholder {
+  opacity: 1;
+  &.is-gone {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+h1 {
+  position: absolute;
+  top: 20px;
+  text-transform: uppercase;
+  text-align: center;
+
+  a {
+    color: white;
+    text-underline-offset: 4px;
+  }
+}
+
+section {
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(7px);
+  border-radius: 10px;
+  position: relative;
+  z-index: 30;
+
+  .screen {
+    width: 330px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    margin: 1.5rem;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      text-align: right;
+      font-size: 1.7rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  .keyboard {
+    margin: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+
+    .numbers {
+      width: calc(calc(55px * 3) + calc(10px * 2));
+      height: calc(calc(55px * 4) + calc(10px * 3));
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 10px 10px;
+      grid-template-areas:
+        "seven eight nine"
+        "four five six"
+        "one two three"
+        "zero zero point";
+
+      .seven {
+        grid-area: seven;
+      }
+      .eight {
+        grid-area: eight;
+      }
+      .nine {
+        grid-area: nine;
+      }
+      .four {
+        grid-area: four;
+      }
+      .five {
+        grid-area: five;
+      }
+      .six {
+        grid-area: six;
+      }
+      .one {
+        grid-area: one;
+      }
+      .two {
+        grid-area: two;
+      }
+      .three {
+        grid-area: three;
+      }
+      .zero {
+        grid-area: zero;
+        width: 120px;
+      }
+      .point {
+        grid-area: point;
+      }
+    }
+
+    .functions {
+      width: calc(calc(55px * 2) + calc(10px * 1));
+      height: calc(calc(55px * 4) + calc(10px * 3));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 10px 10px;
+      grid-template-areas:
+        "ce c"
+        "divide times"
+        "substract add"
+        "enter add";
+
+      .ce {
+        grid-area: ce;
+        background-color: rgba(0, 0, 255, 0.2);
+      }
+      .c {
+        grid-area: c;
+        background-color: rgba(255, 0, 0, 0.2);
+      }
+      .divide {
+        grid-area: divide;
+      }
+      .times {
+        grid-area: times;
+      }
+      .substract {
+        grid-area: substract;
+      }
+      .add {
+        grid-area: add;
+        height: 120px;
+      }
+      .enter {
+        grid-area: enter;
+        background-color: rgba(255, 255, 0, 0.1);
+      }
+    }
+
+    .element {
+      $size: 55px;
+      width: $size;
+      height: $size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 7px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      user-select: none;
+      backdrop-filter: blur(10px);
+    }
+  }
+}
