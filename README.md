@@ -1,6 +1,6 @@
 # Calculatrice codée avec React
 
-> Par [https://pierregueroult.dev](Pierre Guéroult)
+> Par [Pierre Guéroult](https://pierregueroult.dev)
 
 ### `npm start`
 
